@@ -1,0 +1,12 @@
+{
+  "name": "demo-components",
+  "version": "0.0.1",
+  "author": "",
+  "description": "",
+  "homepage": "",
+  "private": true,
+  "devDependencies": {
+    "bower": "",
+    "typescript": "~1.0.0"
+  }
+}
