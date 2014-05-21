@@ -7,5 +7,10 @@
 {{{markup_html}}}
 </template>
 <script>
-{{{script_js}}}
+    (function() {
+        var component_id = '{{{id}}}';
+        var component_name = '{{{name}}}';
+        console.log('Loading component: ' + component_name);
+        {{{script_js}}}
+    })();
 </script>

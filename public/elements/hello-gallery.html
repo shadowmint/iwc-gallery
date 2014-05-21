@@ -2,9 +2,8 @@
 <link rel="import" href="hello-button.html"/>
 <template id="hello_gallery">
 <style>
-hello-gallery  > div {
-        border : 2px solid #f00;
-}
+hello-gallery > div {
+  border: 2px solid #f00; }
 </style>
 <div>
     <span>
@@ -14,18 +13,21 @@ hello-gallery  > div {
 </div>
 </template>
 <script>
-(function () {
-    var owner = document['_currentScript'].ownerDocument;
-    var tmpl = owner.getElementById('hello_gallery');
-    var prototype = Object.create(HTMLElement.prototype);
-    prototype.createdCallback = function () {
-        var root = this.createShadowRoot();
-        var clone = document.importNode(tmpl['content'], true);
-        root.appendChild(clone);
-    };
-    document['registerElement']('hello-gallery', {
-        prototype: prototype
-    });
-})();
+    (function() {
+        var component_id = 'hello_gallery';
+        var component_name = 'hello-gallery';
+        console.log('Loading component: ' + component_name);
+        var owner = document['_currentScript'].ownerDocument;
+var tmpl = owner.getElementById(component_id);
+var prototype = Object.create(HTMLElement.prototype);
+prototype.createdCallback = function () {
+    var root = this.createShadowRoot();
+    var clone = document.importNode(tmpl['content'], true);
+    root.appendChild(clone);
+};
+document['registerElement'](component_name, {
+    prototype: prototype
+});
 //# sourceMappingURL=script.js.map
+    })();
 </script>

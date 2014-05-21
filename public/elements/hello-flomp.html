@@ -1,5 +1,5 @@
 <!-- hello-flomp component -->
-<link rel="import" href="gallery.html"/>
+<link rel="import" href="hello-gallery.html"/>
 <template id="hello_flomp">
 <style>
 hello-flomp > div {
@@ -14,17 +14,20 @@ hello-flomp > div {
 </div>
 </template>
 <script>
-(function () {
-    var owner = document._currentScript.ownerDocument;
-    var tmpl = owner.getElementById('hello_flomp');
-    var prototype = Object.create(HTMLElement.prototype);
-    prototype.createdCallback = function () {
-        var root = this.createShadowRoot();
-        var clone = document.importNode(tmpl.content, true)
-        root.appendChild(clone);
-    };
-    document.registerElement('hello-flomp', {
-        prototype: prototype
-    });
-})();
+    (function() {
+        var component_id = 'hello_flomp';
+        var component_name = 'hello-flomp';
+        console.log('Loading component: ' + component_name);
+        var owner = document._currentScript.ownerDocument;
+var tmpl = owner.getElementById(component_id);
+var prototype = Object.create(HTMLElement.prototype);
+prototype.createdCallback = function () {
+    var root = this.createShadowRoot();
+    var clone = document.importNode(tmpl.content, true)
+    root.appendChild(clone);
+};
+document.registerElement(component_name, {
+    prototype: prototype
+});
+    })();
 </script>

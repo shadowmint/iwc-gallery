@@ -1,5 +1,6 @@
 .baseDir*
 *.ts.js
+*.js.map
 *.d.ts
 *.css
 *.js
