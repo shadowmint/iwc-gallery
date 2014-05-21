@@ -1,0 +1,30 @@
+<!-- hello-flomp component -->
+<link rel="import" href="gallery.html"/>
+<template id="hello_flomp">
+<style>
+hello-flomp > div {
+        border : 2px solid #000;
+}
+</style>
+<div>
+    <span>
+      This is a FLOMP
+    </span>
+    <gallery></gallery>
+</div>
+</template>
+<script>
+(function () {
+    var owner = document._currentScript.ownerDocument;
+    var tmpl = owner.getElementById('hello_flomp');
+    var prototype = Object.create(HTMLElement.prototype);
+    prototype.createdCallback = function () {
+        var root = this.createShadowRoot();
+        var clone = document.importNode(tmpl.content, true)
+        root.appendChild(clone);
+    };
+    document.registerElement('hello-flomp', {
+        prototype: prototype
+    });
+})();
+</script>
